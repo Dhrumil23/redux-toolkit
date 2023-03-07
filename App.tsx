@@ -3,13 +3,13 @@ import './style.css';
 import MoviePlaylist from './components/MoviePlaylist';
 import SongPlaylist from './components/SongsPlaylist';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetMoviePlaylist } from './store';
+import { reset } from './store';
 
 export default function App() {
   const dispatch = useDispatch();
 
   const haldlePlayListReset = () => {
-    dispatch(resetMoviePlaylist([]));
+    dispatch(reset([]));
   };
 
   return (
