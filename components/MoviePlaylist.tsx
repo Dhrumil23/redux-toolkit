@@ -14,7 +14,7 @@ const MoviePlaylist: FC = () => {
   };
 
   const handleSongRemove = (movie: any) => {
-    dispatch(removeMovie(movie))
+    dispatch(removeMovie(movie));
   };
 
   return (
@@ -39,7 +39,7 @@ const MoviePlaylist: FC = () => {
               className="btn btn-danger text-end"
               onClick={() => handleSongRemove(elm)}
             >
-              delete
+              X
             </button>
           </li>
         ))}

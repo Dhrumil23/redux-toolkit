@@ -1,12 +1,61 @@
 const songs = [
-  'Bleeding Love',
-  "Don't Forget",
-  'Finish',
-  'In the Rain',
-  'Ready to Fall',
-  'Realize',
-  'Righted All Your Wrongs',
-  'These Walls',
+  'Like a Rolling Stone',
+  "(I Can't Get No) Satisfaction",
+  'Imagine',
+
+  "What's Going On",
+
+  'Respect',
+
+  'Good Vibrations',
+
+  'Johnny B. Goode',
+
+  'Hey Jude',
+
+  'Smells Like Teen Spirit',
+
+  "What'd I Say",
+
+  'My Generation',
+
+  'A Change Is Gonna Come',
+
+  'Yesterday',
+
+  "Blowin' in the Wind",
+
+  'London Calling',
+
+  'I Want to Hold Your Hand',
+
+  'Purple Haze',
+
+  'Maybellene',
+
+  'Hound Dog',
+
+  'Let It Be',
+
+  'Born to Run',
+
+  'Be My Baby',
+
+  'In My Life',
+
+  'People Get Ready',
+
+  'God Only Knows',
+
+  "(Sittin' On) The Dock of the Bay",
+
+  'Layla',
+
+  'A Day in the Life',
+
+  'Help!',
+
+  'I Walk the Line',
 ];
 
 const movies = [
