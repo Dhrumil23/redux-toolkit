@@ -1,11 +1,21 @@
 import React, { FC, MouseEvent } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMovie, removeMovie } from '../store';
+import { movie } from '../data';
 
 const MoviePlaylist: FC = () => {
-  const songPlayList = ['HI', 'Hello', 'By', 'Chala ja ***k ...'];
+  const dispatch = useDispatch();
 
-  const handleSongAdd = (evt: MouseEvent<HTMLButtonElement>) => {};
+  const songPlayList = useSelector((state) => state.movies);
 
-  const handleSongRemove = (evt: MouseEvent<HTMLButtonElement>) => {};
+  const handleSongAdd = (evt: MouseEvent<HTMLButtonElement>) => {
+    const data = movie();
+    dispatch(addMovie(data));
+  };
+
+  const handleSongRemove = (movie: any) => {
+    dispatch(removeMovie(movie))
+  };
 
   return (
     <div className="card mt-3 me-3 ms-2 p-2">
@@ -27,7 +37,7 @@ const MoviePlaylist: FC = () => {
             {elm}
             <button
               className="btn btn-danger text-end"
-              onClick={handleSongRemove}
+              onClick={() => handleSongRemove(elm)}
             >
               delete
             </button>
