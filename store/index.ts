@@ -1,50 +1,14 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
-
-const moviesSlice = createSlice({
-  name: 'movies',
-  initialState: [],
-  reducers: {
-    addMovie(state, action) {
-      state.push(action.payload);
-    },
-    removeMovie(state, action) {
-      const index = state.indexOf(action.payload);
-      state.splice(index, 1);
-    },
-    reset(state, aciton) {
-      return [];
-    },
-  },
-});
-
-const songsSlice = createSlice({
-  name: 'songs',
-  initialState: [],
-  reducers: {
-    addSong(state, action) {
-      state.push(action.payload);
-    },
-    removeSong(state, action) {
-      const index = state.indexOf(action.payload);
-      state.splice(index, 1);
-    },
-  },
-  extraReducers(builder) {
-    builder.addCase('movies/reset', (state, action) => {
-      return [];
-    });
-  },
-});
+import { configureStore } from '@reduxjs/toolkit';
+import { resetList } from './actions';
+import { moviesReducer, addMovie, removeMovie } from './slices/movieSlice';
+import { songsReducer, addSong, removeSong } from './slices/songSlice';
 
 const store = configureStore({
   reducer: {
-    songs: songsSlice.reducer,
-    movies: moviesSlice.reducer,
+    songs: songsReducer,
+    movies: moviesReducer,
   },
 });
 
 export { store };
-
-export const { addSong, removeSong } = songsSlice.actions;
-export const { addMovie, removeMovie, reset } =
-  moviesSlice.actions;
+export { addMovie, removeMovie, addSong, removeSong, resetList };
